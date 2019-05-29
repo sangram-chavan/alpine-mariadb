@@ -11,7 +11,7 @@ LABEL maintainer="Sangram Chavan <schavan@outlook.com>" \
     org.opencontainers.image.vendor="Open Source" \
     org.opencontainers.image.version="v10.3.13" \
     org.opencontainers.image.url="https://hub.docker.com/r/sangram/alpine-mariadb/" \
-    org.opencontainers.image.source="https://github.com/sangram/alpine-mariadb"
+    org.opencontainers.image.source="https://github.com/sangram-chavan/alpine-mariadb"
 
 RUN apk add --no-cache mariadb mariadb-client mariadb-server-utils pwgen && \
     rm -f /var/cache/apk/*
