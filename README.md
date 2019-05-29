@@ -66,7 +66,7 @@ MariaDB is developed as open source software and as a relational database it pro
 
 
 ```bash
-docker run -it --name mariadb -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_DATABASE=wordpressdb -e MYSQL_USER=wordpressuser -e MYSQL_PASSWORD=hguyFt6S95dgfR4ryb -e MYSQL_ROOT_PASSWORD=hguyFtgfR4r9R4r76 sangram/alpine-mariadb
+docker run -it --name mariadb -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_DATABASE=mysqldb -e MYSQL_USER=mysqluser -e MYSQL_PASSWORD=mysqluserpwd -e MYSQL_ROOT_PASSWORD=mysqlrootpwd sangram/alpine-mariadb
 
 ```
 
@@ -96,10 +96,10 @@ When a container is started for the first time, a new database with the specifie
 mysql:
   image: sangram/alpine-mariadb
   environment:
-    MYSQL_ROOT_PASSWORD: hguyFtgfR4r9R4r76
-    MYSQL_DATABASE: wordpressdb
-    MYSQL_USER: wordpressuser
-    MYSQL_PASSWORD: hguyFt6S95dgfR4ryb
+    MYSQL_ROOT_PASSWORD: mysqlrootpasswd
+    MYSQL_DATABASE: mysqldb
+    MYSQL_USER: mysqluser
+    MYSQL_PASSWORD: mysqluserpasswd
   expose:
     - "3306"
   volumes:
@@ -109,7 +109,7 @@ mysql:
 
 ## Source Repository
 
-* [Github - sangram/alpine-mariadb](https://github.com/sangram/alpine-mariadb)
+* [Github - sangram-chavan/alpine-mariadb](https://github.com/sangram-chavan/alpine-mariadb)
 
 ## Links
 
