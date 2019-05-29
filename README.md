@@ -37,7 +37,7 @@ MariaDB is developed as open source software and as a relational database it pro
 
 ## Tags
 
-* ```:latest``` latest branch based (Automatic Architecture Selection)
+* ```:latest``` latest branch based
 
 ## Layers & Sizes
 
