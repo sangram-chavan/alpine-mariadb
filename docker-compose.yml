@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  mariadb:
+    image: alpine-mariadb
+    container_name: mysql
+    hostname: mariadb
+    env_file: ./mysql.env
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/data
+    restart: on-failure
+volumes: 
+  db-data:
