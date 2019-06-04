@@ -1,32 +1,24 @@
-FROM sangram/alpine-mini:latest
 
-LABEL maintainer="Sangram Chavan <schavan@outlook.com>" \
-    architecture="amd64/x86_64" \
-    mariadb-version="10.3.13" \
-    alpine-version="3.9" \
-    build="29-May-2019" \
-    org.opencontainers.image.title="alpine-mariadb" \
-    org.opencontainers.image.description="MariaDB Docker image running on Alpine Linux" \
-    org.opencontainers.image.authors="Sangram Chavan <schavan@outlook.com>" \
-    org.opencontainers.image.vendor="Open Source" \
-    org.opencontainers.image.version="v10.3.13" \
-    org.opencontainers.image.url="https://hub.docker.com/r/sangram/alpine-mariadb/" \
-    org.opencontainers.image.source="https://github.com/sangram-chavan/alpine-mariadb"
+ARG VERSION
+FROM sangram/alpine-mini:$VERSION
+LABEL   maintainer="Sangram Chavan <schavan@outlook.com>" \
+        architecture="amd64/x86_64" 
 
-ARG IMAGE_NAME
-ARG DOCKER_REPO
+ARG VERSION
 ARG BUILD_DATE
 ARG VCS_REF
 
-# fix labels
-#LABEL maintainer="nimmis <kjell.havneskold@gmail.com>" \
-#      org.label-schema.docker.dockerfile="/Dockerfile" \
-#      org.label-schema.name="MariaDB database" \
-#      org.label-schema.url="https://www.nimmis.nu" \
-#      org.label-schema.build-date=$BUILD_DATE \
-#      org.label-schema.vcs-ref=$VCS_REF \
-#      org.label-schema.vcs-url="https://github.com/nimmis/docker-alpine-mariadb.git"
-
+LABEL   org.label-schema.schema-version="1.0" \
+        org.label-schema.build-date=$BUILD_DATE \
+        org.label-schema.name="MariaDB database" \
+        org.label-schema.description="MariaDB Docker image running on Alpine Linux" \
+        org.label-schema.url="https://hub.docker.com/r/sangram/alpine-mariadb" \
+        org.label-schema.vcs-url="https://github.com/sangram-chavan/docker-images/alpine-mariadb.git" \
+        org.label-schema.vcs-ref=$VCS_REF \
+        org.label-schema.vendor="Open Source" \
+        org.label-schema.version=$VERSION \
+        org.label-schema.image.authors="Sangram Chavan <schavan@outlook.com>" \
+        org.label-schema.image.vendor="Open Source" 
 
 ENV LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8" \
